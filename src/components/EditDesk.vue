@@ -303,12 +303,8 @@
                 };
             }
         },
-        watch: {},
         methods: {
             ...mapActions(['updateDesk', 'setAlert', 'apiCall']),
-            fn() {
-                console.log('123')
-            },
             push_column() {
                 const col = {
                     'title': this.new_column_title,

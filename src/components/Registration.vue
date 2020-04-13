@@ -75,9 +75,6 @@
         },
         methods: {
             ...mapActions(['createUser', 'apiCall']),
-            fn() {
-                alert('af')
-            },
             submit() {
                 this.createUser({
                     name: this.name,

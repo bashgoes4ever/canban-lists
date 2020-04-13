@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
     state: {
         user: JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : null

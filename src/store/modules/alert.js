@@ -1,4 +1,4 @@
-import axios from "axios/index";
+import axios from "axios/index"
 
 export default {
     state: {
@@ -19,8 +19,6 @@ export default {
         setAlert({commit}, alert) {
             commit('setAlert', alert)
         },
-        //${user.birth_date.split('-')[1]}/${user.birth_date.split('-')[2]}
-        //http://numbersapi.com/${date[1]}/${date[2]}/date
         apiCall({commit}, date) {
             axios.get(`http://numbersapi.com/${date[1]}/${date[2]}/date`)
                 .then(r => {
@@ -29,14 +27,14 @@ export default {
                         'color': 'success',
                         'text': r
                     }, {root: true})
-                    console.log(date)
-                }).catch(err => {
-                commit('setAlert', {
-                    'open': true,
-                    'color': 'error',
-                    'text': `Can't get data from Numbersapi.com: ${err.message}`
-                }, {root: true})
-            })
+                })
+                .catch(err => {
+                    commit('setAlert', {
+                        'open': true,
+                        'color': 'error',
+                        'text': `Can't get data from Numbersapi.com: ${err.message}`
+                    }, {root: true})
+                })
         }
     },
     getters: {
